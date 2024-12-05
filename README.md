@@ -24,4 +24,4 @@ https://pointclouds.org/
     ros2 launch awsim_pointcloud_builder awsim_pointcloud_builder.launch.xml save_path:=<save_map_path>
     ```
 
-4. Stop AWSIM. This pkg make stopping automatically After stopping AWSIM.
+4. Stop AWSIM. This pkg stop automatically After stopping AWSIM.
