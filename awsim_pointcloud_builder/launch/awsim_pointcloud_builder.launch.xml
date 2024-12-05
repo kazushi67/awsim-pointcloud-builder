@@ -1,0 +1,15 @@
+<launch>
+  <arg name="awsim_pointcloud_builder_param_path" default="$(find-pkg-share awsim_pointcloud_builder)/config/awsim_pointcloud_builder.param.yaml"/>
+  <arg name="save_path" default="" description="saved map path"/>
+
+  <node pkg="awsim_pointcloud_builder" exec="awsim_pointcloud_builder" name="awsim_pointcloud_builder" output="screen">
+  	<param from="$(var awsim_pointcloud_builder_param_path)"/>
+
+    <param name="save_path" value="$(var save_path)"/>
+
+    <remap from="point_cloud" to="/sensing/lidar/top/pointcloud_raw_ex"/> 
+    <remap from="ground_truth" to="/awsim/ground_truth/vehicle/pose"/> 
+
+  </node>
+
+</launch>
