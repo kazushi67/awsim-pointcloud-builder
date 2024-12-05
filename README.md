@@ -19,5 +19,9 @@ https://pointclouds.org/
 2. Build this pkg from this source
 3. Launch this pkg after running AWSIM  
     i. Launch this pkg  
-    `ros2 launch awsim_pointcloud_builder awsim_pointcloud_builder.launch.xml save_path:=<save_map_path>`
+
+    ```bash
+    ros2 launch awsim_pointcloud_builder awsim_pointcloud_builder.launch.xml save_path:=<save_map_path>
+    ```
+
 4. Stop AWSIM. This pkg make stopping automatically After stopping AWSIM.
