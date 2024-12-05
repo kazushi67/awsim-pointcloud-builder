@@ -10,7 +10,7 @@ https://docs.ros.org/en/humble/index.html
 https://pointclouds.org/
 
 ## Input/Output
-    INPUT ： pointcloud-topic, PoseGT
+    INPUT ： Pointcloud-Topic, PoseGT-Topic
     OUTPUT： .pcd-format-map file
 
 
