@@ -18,8 +18,6 @@ https://pointclouds.org/
 1. Prepare AWSIM-binary [follwing here](https://tier4.github.io/AWSIM/)
 2. Build this pkg from this source
 3. Launch this pkg after running AWSIM  
-    i. Launch this pkg  
-
     ```bash
     ros2 launch awsim_pointcloud_builder awsim_pointcloud_builder.launch.xml save_path:=<save_map_path>
     ```
