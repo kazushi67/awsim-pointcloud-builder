@@ -1,6 +1,6 @@
-# awsim-pointcloud-builder
+# Awsim-pointcloud-builder
 
-## discription
+## Discription
 This pkg make pointcloud-map with [AWSIM](https://tier4.github.io/AWSIM/). When create custom enviroment within AWSIM, this pkg helps make pointcloud for [Autoware](https://github.com/autowarefoundation/autoware) 
 
 This pkg is based on ros2-humble, pcl
@@ -15,4 +15,9 @@ https://pointclouds.org/
 
 
 ## How to use
-under construction
+1. Prepare AWSIM-binary [follwing here](https://tier4.github.io/AWSIM/)
+2. Build this pkg from this source
+3. Launch this pkg after running AWSIM  
+    i. Launch this pkg  
+    `ros2 launch awsim_pointcloud_builder awsim_pointcloud_builder.launch.xml save_path:=<save_map_path>`
+4. Stop AWSIM. This pkg make stopping automatically After stopping AWSIM.
