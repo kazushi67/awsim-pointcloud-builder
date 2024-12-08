@@ -1,0 +1,10 @@
+/**:
+  ros__parameters:
+  # base_link to sensor_frame
+  # https://github.com/tier4/awsim_sensor_kit_launch/blob/main/awsim_sensor_kit_description/config/sensors_calibration.yaml
+  offset_x: 0.9
+  offset_y: 0.0
+  offset_z: 2.0
+  offset_roll: -0.001
+  offset_pitch: 0.015
+  offset_yaw: -0.0364
