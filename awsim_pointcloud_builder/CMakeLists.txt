@@ -22,12 +22,13 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_executable (awsim_pointcloud_builder src/awsim_pointcloud_builder.cpp)
 ament_target_dependencies(awsim_pointcloud_builder rclcpp pcl_conversions pcl_ros sensor_msgs)
 
-include_directories(/include)
+include_directories(include)
+
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}/
 )
-install(DIRECTORY config/
-  DESTINATION share/${PROJECT_NAME}/config
+install(DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 install(TARGETS
