@@ -1,4 +1,4 @@
-#include "../include/awsim_pointcloud_builder/awsim_pointcloud_builder.hpp"
+#include "awsim_pointcloud_builder/awsim_pointcloud_builder.hpp"
 
 int main(int argc, char * argv[])
 {
