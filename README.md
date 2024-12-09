@@ -17,9 +17,10 @@ https://pointclouds.org/
 ## How to use
 1. Prepare AWSIM-binary [follwing here](https://tier4.github.io/AWSIM/)
 2. Build this pkg from this source
-3. Launch this pkg after running AWSIM  
+3. running this pkg and AWSIM  
     ```bash
     ros2 launch awsim_pointcloud_builder awsim_pointcloud_builder.launch.xml save_path:=<save_map_path>
     ```
 
-4. Stop AWSIM. This pkg stop automatically After stopping AWSIM.
+4. Stop AWSIM.
+5. It's a success if pcd-file exists in save_map_path.
