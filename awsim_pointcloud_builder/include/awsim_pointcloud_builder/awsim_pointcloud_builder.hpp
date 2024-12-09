@@ -138,7 +138,6 @@ class AwsimMapBuilder : public rclcpp::Node
         pcl::PointCloud<pcl::PointXYZ>::Ptr pcl_pointcloud_(new pcl::PointCloud<pcl::PointXYZ>);
         pcl::fromROSMsg(*pointcloud_in_.at(j), *pcl_pointcloud_);
 
-        // #pragma omp parallel for num_threads(numberOfCores)
         for (size_t i = 0; i < pcl_pointcloud_->size(); ++i)
         {
           pcl::PointXYZ input_point_ = pcl_pointcloud_->points[i];
