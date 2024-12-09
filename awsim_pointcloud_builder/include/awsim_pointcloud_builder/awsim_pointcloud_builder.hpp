@@ -138,14 +138,13 @@ class AwsimMapBuilder : public rclcpp::Node
         pcl::PointCloud<pcl::PointXYZ>::Ptr pcl_pointcloud_(new pcl::PointCloud<pcl::PointXYZ>);
         pcl::fromROSMsg(*pointcloud_in_.at(j), *pcl_pointcloud_);
 
-        for (size_t i = 0; i < pcl_pointcloud_->size(); ++i)
+        for (pcl::PointXYZ point : pcl_pointcloud_->points)
         {
-          pcl::PointXYZ input_point_ = pcl_pointcloud_->points[i];
-          pcl::PointXYZ point;
-          point.x = transSensorFrame(0,0) * input_point_.x + transSensorFrame(0,1) * input_point_.y + transSensorFrame(0,2) * input_point_.z + transSensorFrame(0,3);
-          point.y = transSensorFrame(1,0) * input_point_.x + transSensorFrame(1,1) * input_point_.y + transSensorFrame(1,2) * input_point_.z + transSensorFrame(1,3);
-          point.z = transSensorFrame(2,0) * input_point_.x + transSensorFrame(2,1) * input_point_.y + transSensorFrame(2,2) * input_point_.z + transSensorFrame(2,3);
-          pointcloud_out_->push_back(point);
+          pcl::PointXYZ transPoint;
+          transPoint.x = transSensorFrame(0,0) * point.x + transSensorFrame(0,1) * point.y + transSensorFrame(0,2) * point.z + transSensorFrame(0,3);
+          transPoint.y = transSensorFrame(1,0) * point.x + transSensorFrame(1,1) * point.y + transSensorFrame(1,2) * point.z + transSensorFrame(1,3);
+          transPoint.z = transSensorFrame(2,0) * point.x + transSensorFrame(2,1) * point.y + transSensorFrame(2,2) * point.z + transSensorFrame(2,3);
+          pointcloud_out_->push_back(transPoint);
         }
       }
 
