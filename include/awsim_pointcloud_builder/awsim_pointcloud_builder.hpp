@@ -71,12 +71,12 @@ class AwsimMapBuilder : public rclcpp::Node
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr sub_pointcloud_;
     rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr sub_ground_truth_;
     rclcpp::TimerBase::SharedPtr timer_;
-    bool isSuscribe = false;
+    bool isSubscribe = false;
     bool isReady = true;
 
     void pointcloud_callback(sensor_msgs::msg::PointCloud2::SharedPtr msg)
     {
-      isSuscribe = true;
+      isSubscribe = true;
       isReady = false;
       pointcloud_array_.push_back(msg);
     } 
@@ -172,13 +172,13 @@ class AwsimMapBuilder : public rclcpp::Node
         return;
       }
 
-      if(isReady == false && isSuscribe == false){
+      if(isReady == false && isSubscribe == false){
         RCLCPP_INFO(this->get_logger(), "Stop and make pointcloud_map.");
         rclcpp::shutdown();
         return;
       }
       
       RCLCPP_INFO(this->get_logger(), "Subscribe PCD-topic.");
-      isSuscribe = false;
+      isSubscribe = false;
     }
 };
