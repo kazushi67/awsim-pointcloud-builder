@@ -28,7 +28,7 @@ using namespace std;
 class AwsimMapBuilder : public rclcpp::Node
 {
   public:
-    AwsimMapBuilder(): Node("pointcloud_publisher")
+    AwsimMapBuilder(): Node("awsim_map_builder")
     {
       rclcpp::QoS qos(rclcpp::KeepLast(5));
       qos.reliability(rclcpp::ReliabilityPolicy::BestEffort);
